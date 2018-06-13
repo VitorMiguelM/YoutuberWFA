@@ -25,46 +25,82 @@ namespace Model
 
         public void SetNomePessoa(string nomePessoa)
         {
+            if ((nomePessoa.Trim() == null) || (nomePessoa.Trim().Count() < 3))
+            {
+                throw new Exception ("O campo \"Nome\" Deve ser preenchido corretamente !!");
+            }
             this.NomePessoa = nomePessoa;
         }
 
         public void SetSobrenome(string sobrenome)
         {
+            if ((sobrenome.Trim() == null) || (sobrenome.Trim().Count() < 3))
+            {
+               throw new Exception ("O campo \"Sobrenome\" deve ser preenchido corretamente !!");
+            }
             this.Sobrenome = sobrenome;
         }
 
         public void SetApelido(string apelido)
         {
+            if (apelido.Trim() == null)
+            {
+                throw new Exception ("O campo \"Apelido\" deve ser preenchido corretamente !!");
+            }
             this.Apelido = apelido;
         }
 
         public void SetNomeDoCanal(string nomeDoCanal)
         {
+            if (nomeDoCanal.Trim() == null)
+            {
+                throw new Exception ("O campo \"Nome do canal\" deve ser preenchido corretamente !!");
+            }
             this.NomeDoCanal = nomeDoCanal;
         }
 
         public void SetQuantidadeInscritos(int quantidadeInscritos)
         {
+            if (quantidadeInscritos < 0)
+            {
+                 throw new Exception ("O campo \"Quantidade de inscritos\" deve ser preenchido corretamente !!");
+            }
             this.QuantidadeInscritos = quantidadeInscritos;
         }
 
         public void SetPlataforma(string plataforma)
         {
+            if (plataforma == null)
+            {
+                throw new Exception("O campo \"Plataforma\" deve ser preenchido corretamente !!");
+            }
             this.Plataforma = plataforma;
         }
 
         public void SetCategoriaDosJogos(string categoriaDosJogos)
         {
+            if (categoriaDosJogos == null)
+            {
+                throw new Exception("O campo \"Categoria dos jogos\" deve ser preenchido corretamente !!");
+            }
             this.CategoriaDosJogos = categoriaDosJogos;
         }
 
         public void SetQuantidadeVisualizacoes(long quantidadeVisualizacoes)
         {
+            if ((quantidadeVisualizacoes < 0) || (quantidadeVisualizacoes > 8000000000))
+            {
+                throw new Exception("O campo \"Quantidade de visualizações\" deve ser preenchido corretamente !!");
+            }
             this.QuantidadeVisualizacoes = quantidadeVisualizacoes;
         }
 
         public void SetQuantidadeLikes(int quantidadeLikes)
         {
+            if ((quantidadeLikes < 0) || (quantidadeLikes > 8000000000))
+            {
+                throw new Exception("O campo \"Quantidade de likes\" deve ser preenchido corretamente !!");
+            }
             this.QuantidadeLikes = quantidadeLikes;
         }
 

@@ -147,10 +147,7 @@ namespace Youtuber
                 MessageBox.Show("O campo \"Quantidade de visualizações\" deve ser preenchido corretamente !!");
             }
 
-            try
-            {
-
-            }*/
-        }
+            */
+        
     }
 }
