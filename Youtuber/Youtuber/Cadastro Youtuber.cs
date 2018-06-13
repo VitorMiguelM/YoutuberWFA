@@ -27,7 +27,7 @@ namespace Youtuber
             
         }
 
-        public void ValidacaoCampos()
+        /*public void ValidacaoCampos()
         {
             // Validação do nome
             if (txtNomePessoa.Text == null)
@@ -108,6 +108,49 @@ namespace Youtuber
             {
                 MessageBox.Show("O campo \"Quantidade de inscritos\" deve ser preenchido corretamente !!");
             }
+
+            //Validação da plataforma
+            if (cbPlataforma.SelectedItem == null)
+            {
+                MessageBox.Show("O campo \"Plataforma\" deve ser preenchido corretamente !!");
+            }
+
+            try
+            {
+                string plataforma = cbPlataforma.SelectedItem.ToString();
+                return;
+            }
+            catch
+            {
+                MessageBox.Show("O campo \"Plataforma\" deve ser preenchido corretamente !!");
+            }
+
+            //Validação da categoria dos jogos
+            if (cbCategoriaJogos.SelectedItem == null)
+            {
+                MessageBox.Show("O campo \"Categoria dos jogos \" deve ser preenchido corretamente !!");
+            }
+
+            try
+            {
+                string categoriaDosJogos = cbCategoriaJogos.SelectedItem.ToString();
+                return;
+            }
+            catch
+            {
+                MessageBox.Show("O campo \"Categoria dos jogos\" deve ser preenchido corretamente !!");
+            }
+
+            //Validação da quantidade de visualizações
+            if (txtQuantidadeVisualizacoes == null)
+            {
+                MessageBox.Show("O campo \"Quantidade de visualizações\" deve ser preenchido corretamente !!");
+            }
+
+            try
+            {
+
+            }*/
         }
     }
 }
