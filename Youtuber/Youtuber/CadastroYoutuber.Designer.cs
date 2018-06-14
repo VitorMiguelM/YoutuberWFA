@@ -58,7 +58,7 @@
             this.cbCategoriaJogos = new System.Windows.Forms.ComboBox();
             this.txtQuantidadeVisualizacoes = new System.Windows.Forms.TextBox();
             this.txtQuantidadeLikes = new System.Windows.Forms.TextBox();
-            this.txtDescriçãoCanal = new System.Windows.Forms.TextBox();
+            this.txtDescricaoCanal = new System.Windows.Forms.TextBox();
             this.txtRendaPorVideo = new System.Windows.Forms.TextBox();
             this.cbNacionalidade = new System.Windows.Forms.ComboBox();
             this.rbSimPatrocinador = new System.Windows.Forms.RadioButton();
@@ -69,8 +69,19 @@
             this.rbSimStreams = new System.Windows.Forms.RadioButton();
             this.txtQuantidadeVideosUpados = new System.Windows.Forms.TextBox();
             this.btnCadastrarInformacoes = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnApagarCanal = new System.Windows.Forms.Button();
             this.btnEditarInformacoes = new System.Windows.Forms.Button();
+            this.dgvListagem = new System.Windows.Forms.DataGridView();
+            this.NomeDoCanalColunn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantidadeInscritosColunn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListagem)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -393,13 +404,13 @@
             this.txtQuantidadeLikes.Size = new System.Drawing.Size(108, 20);
             this.txtQuantidadeLikes.TabIndex = 31;
             // 
-            // txtDescriçãoCanal
+            // txtDescricaoCanal
             // 
-            this.txtDescriçãoCanal.Location = new System.Drawing.Point(785, 389);
-            this.txtDescriçãoCanal.Multiline = true;
-            this.txtDescriçãoCanal.Name = "txtDescriçãoCanal";
-            this.txtDescriçãoCanal.Size = new System.Drawing.Size(171, 67);
-            this.txtDescriçãoCanal.TabIndex = 32;
+            this.txtDescricaoCanal.Location = new System.Drawing.Point(785, 389);
+            this.txtDescricaoCanal.Multiline = true;
+            this.txtDescricaoCanal.Name = "txtDescricaoCanal";
+            this.txtDescricaoCanal.Size = new System.Drawing.Size(171, 67);
+            this.txtDescricaoCanal.TabIndex = 32;
             // 
             // txtRendaPorVideo
             // 
@@ -471,7 +482,7 @@
             // 
             this.rbSimPatrocinador.AutoSize = true;
             this.rbSimPatrocinador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbSimPatrocinador.Location = new System.Drawing.Point(785, 232);
+            this.rbSimPatrocinador.Location = new System.Drawing.Point(5, 6);
             this.rbSimPatrocinador.Name = "rbSimPatrocinador";
             this.rbSimPatrocinador.Size = new System.Drawing.Size(50, 19);
             this.rbSimPatrocinador.TabIndex = 41;
@@ -483,7 +494,7 @@
             // 
             this.rbNaoPatrocinador.AutoSize = true;
             this.rbNaoPatrocinador.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbNaoPatrocinador.Location = new System.Drawing.Point(846, 232);
+            this.rbNaoPatrocinador.Location = new System.Drawing.Point(64, 6);
             this.rbNaoPatrocinador.Name = "rbNaoPatrocinador";
             this.rbNaoPatrocinador.Size = new System.Drawing.Size(51, 19);
             this.rbNaoPatrocinador.TabIndex = 42;
@@ -495,7 +506,7 @@
             // 
             this.rbNaoAnuncios.AutoSize = true;
             this.rbNaoAnuncios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbNaoAnuncios.Location = new System.Drawing.Point(846, 314);
+            this.rbNaoAnuncios.Location = new System.Drawing.Point(58, 3);
             this.rbNaoAnuncios.Name = "rbNaoAnuncios";
             this.rbNaoAnuncios.Size = new System.Drawing.Size(51, 19);
             this.rbNaoAnuncios.TabIndex = 43;
@@ -507,7 +518,7 @@
             // 
             this.rbSimAnuncios.AutoSize = true;
             this.rbSimAnuncios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbSimAnuncios.Location = new System.Drawing.Point(785, 314);
+            this.rbSimAnuncios.Location = new System.Drawing.Point(0, 3);
             this.rbSimAnuncios.Name = "rbSimAnuncios";
             this.rbSimAnuncios.Size = new System.Drawing.Size(50, 19);
             this.rbSimAnuncios.TabIndex = 44;
@@ -519,7 +530,7 @@
             // 
             this.rbNaoStreams.AutoSize = true;
             this.rbNaoStreams.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbNaoStreams.Location = new System.Drawing.Point(846, 275);
+            this.rbNaoStreams.Location = new System.Drawing.Point(61, 9);
             this.rbNaoStreams.Name = "rbNaoStreams";
             this.rbNaoStreams.Size = new System.Drawing.Size(51, 19);
             this.rbNaoStreams.TabIndex = 45;
@@ -531,7 +542,7 @@
             // 
             this.rbSimStreams.AutoSize = true;
             this.rbSimStreams.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbSimStreams.Location = new System.Drawing.Point(785, 275);
+            this.rbSimStreams.Location = new System.Drawing.Point(6, 8);
             this.rbSimStreams.Name = "rbSimStreams";
             this.rbSimStreams.Size = new System.Drawing.Size(50, 19);
             this.rbSimStreams.TabIndex = 46;
@@ -548,9 +559,9 @@
             // 
             // btnCadastrarInformacoes
             // 
-            this.btnCadastrarInformacoes.BackColor = System.Drawing.Color.Red;
+            this.btnCadastrarInformacoes.BackColor = System.Drawing.Color.Silver;
             this.btnCadastrarInformacoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarInformacoes.Location = new System.Drawing.Point(932, 56);
+            this.btnCadastrarInformacoes.Location = new System.Drawing.Point(804, 493);
             this.btnCadastrarInformacoes.Name = "btnCadastrarInformacoes";
             this.btnCadastrarInformacoes.Size = new System.Drawing.Size(108, 41);
             this.btnCadastrarInformacoes.TabIndex = 48;
@@ -558,47 +569,105 @@
             this.btnCadastrarInformacoes.UseVisualStyleBackColor = false;
             this.btnCadastrarInformacoes.Click += new System.EventHandler(this.btnCadastrarInformacoes_Click);
             // 
-            // button2
+            // btnApagarCanal
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(932, 162);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 41);
-            this.button2.TabIndex = 49;
-            this.button2.Text = "??";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnApagarCanal.BackColor = System.Drawing.Color.Silver;
+            this.btnApagarCanal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApagarCanal.Location = new System.Drawing.Point(533, 493);
+            this.btnApagarCanal.Name = "btnApagarCanal";
+            this.btnApagarCanal.Size = new System.Drawing.Size(108, 41);
+            this.btnApagarCanal.TabIndex = 49;
+            this.btnApagarCanal.Text = "Apagar Canal";
+            this.btnApagarCanal.UseVisualStyleBackColor = false;
+            this.btnApagarCanal.Click += new System.EventHandler(this.btnApagarCanal_Click);
             // 
             // btnEditarInformacoes
             // 
-            this.btnEditarInformacoes.BackColor = System.Drawing.Color.Red;
+            this.btnEditarInformacoes.BackColor = System.Drawing.Color.Silver;
             this.btnEditarInformacoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarInformacoes.Location = new System.Drawing.Point(932, 106);
+            this.btnEditarInformacoes.Location = new System.Drawing.Point(669, 493);
             this.btnEditarInformacoes.Name = "btnEditarInformacoes";
             this.btnEditarInformacoes.Size = new System.Drawing.Size(108, 41);
             this.btnEditarInformacoes.TabIndex = 50;
             this.btnEditarInformacoes.Text = "Editar Informações";
             this.btnEditarInformacoes.UseVisualStyleBackColor = false;
+            this.btnEditarInformacoes.Click += new System.EventHandler(this.btnEditarInformacoes_Click);
+            // 
+            // dgvListagem
+            // 
+            this.dgvListagem.AllowUserToAddRows = false;
+            this.dgvListagem.AllowUserToDeleteRows = false;
+            this.dgvListagem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListagem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NomeDoCanalColunn,
+            this.QuantidadeInscritosColunn});
+            this.dgvListagem.Location = new System.Drawing.Point(17, 493);
+            this.dgvListagem.Name = "dgvListagem";
+            this.dgvListagem.ReadOnly = true;
+            this.dgvListagem.Size = new System.Drawing.Size(501, 150);
+            this.dgvListagem.TabIndex = 51;
+            this.dgvListagem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListagem_CellContentClick);
+            this.dgvListagem.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListagem_CellDoubleClick);
+            // 
+            // NomeDoCanalColunn
+            // 
+            this.NomeDoCanalColunn.HeaderText = "Nome do canal";
+            this.NomeDoCanalColunn.Name = "NomeDoCanalColunn";
+            this.NomeDoCanalColunn.ReadOnly = true;
+            // 
+            // QuantidadeInscritosColunn
+            // 
+            this.QuantidadeInscritosColunn.HeaderText = "Quantidade de inscritos";
+            this.QuantidadeInscritosColunn.Name = "QuantidadeInscritosColunn";
+            this.QuantidadeInscritosColunn.ReadOnly = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbSimPatrocinador);
+            this.groupBox1.Controls.Add(this.rbNaoPatrocinador);
+            this.groupBox1.Location = new System.Drawing.Point(785, 227);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(112, 42);
+            this.groupBox1.TabIndex = 52;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbSimAnuncios);
+            this.groupBox2.Controls.Add(this.rbNaoAnuncios);
+            this.groupBox2.Location = new System.Drawing.Point(788, 310);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(112, 27);
+            this.groupBox2.TabIndex = 53;
+            this.groupBox2.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rbSimStreams);
+            this.groupBox3.Controls.Add(this.rbNaoStreams);
+            this.groupBox3.Location = new System.Drawing.Point(784, 266);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(112, 28);
+            this.groupBox3.TabIndex = 53;
+            this.groupBox3.TabStop = false;
             // 
             // Cadastro_Youtuber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Red;
-            this.ClientSize = new System.Drawing.Size(1052, 468);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1052, 655);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.dgvListagem);
             this.Controls.Add(this.btnEditarInformacoes);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnApagarCanal);
             this.Controls.Add(this.btnCadastrarInformacoes);
             this.Controls.Add(this.txtQuantidadeVideosUpados);
-            this.Controls.Add(this.rbSimStreams);
-            this.Controls.Add(this.rbNaoStreams);
-            this.Controls.Add(this.rbSimAnuncios);
-            this.Controls.Add(this.rbNaoAnuncios);
-            this.Controls.Add(this.rbNaoPatrocinador);
-            this.Controls.Add(this.rbSimPatrocinador);
             this.Controls.Add(this.cbNacionalidade);
             this.Controls.Add(this.txtRendaPorVideo);
-            this.Controls.Add(this.txtDescriçãoCanal);
+            this.Controls.Add(this.txtDescricaoCanal);
             this.Controls.Add(this.txtQuantidadeLikes);
             this.Controls.Add(this.txtQuantidadeVisualizacoes);
             this.Controls.Add(this.cbCategoriaJogos);
@@ -631,6 +700,14 @@
             this.Controls.Add(this.label2);
             this.Name = "Cadastro_Youtuber";
             this.Text = "Cadastro_Youtuber";
+            this.Load += new System.EventHandler(this.Cadastro_Youtuber_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListagem)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -668,7 +745,7 @@
         private System.Windows.Forms.ComboBox cbCategoriaJogos;
         private System.Windows.Forms.TextBox txtQuantidadeVisualizacoes;
         private System.Windows.Forms.TextBox txtQuantidadeLikes;
-        private System.Windows.Forms.TextBox txtDescriçãoCanal;
+        private System.Windows.Forms.TextBox txtDescricaoCanal;
         private System.Windows.Forms.TextBox txtRendaPorVideo;
         private System.Windows.Forms.ComboBox cbNacionalidade;
         private System.Windows.Forms.RadioButton rbSimPatrocinador;
@@ -679,8 +756,15 @@
         private System.Windows.Forms.RadioButton rbSimStreams;
         private System.Windows.Forms.TextBox txtQuantidadeVideosUpados;
         private System.Windows.Forms.Button btnCadastrarInformacoes;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnApagarCanal;
         private System.Windows.Forms.Button btnEditarInformacoes;
+        private System.Windows.Forms.DataGridView dgvListagem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeDoCanalColunn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QuantidadeInscritosColunn;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 

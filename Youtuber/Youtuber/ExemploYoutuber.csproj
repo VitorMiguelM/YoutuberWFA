@@ -44,16 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cadastro Youtuber.cs">
+    <Compile Include="CadastroYoutuber.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cadastro Youtuber.Designer.cs">
-      <DependentUpon>Cadastro Youtuber.cs</DependentUpon>
+    <Compile Include="CadastroYoutuber.Designer.cs">
+      <DependentUpon>CadastroYoutuber.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Cadastro Youtuber.resx">
-      <DependentUpon>Cadastro Youtuber.cs</DependentUpon>
+    <Compile Include="RepositorioCanal.cs" />
+    <EmbeddedResource Include="CadastroYoutuber.resx">
+      <DependentUpon>CadastroYoutuber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,6 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{316f6c6e-6403-4a55-be44-76aa18fe5ceb}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
