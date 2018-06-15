@@ -99,8 +99,9 @@ namespace Youtuber
 
             foreach (Canal canal in channel.ObterCanal())
             {
-                //Esqueci do "Sobrenome", desculpe pela falta de atenção
+                
                 txtNomePessoa.Text = canal.GetNomePessoa();
+                txtSobrenome.Text = canal.GetSobrenome();
                 txtApelido.Text = canal.GetApelido();
                 txtNomeCanal.Text = canal.GetNomeDoCanal();
                 txtQuantidadeInscritos.Text = Convert.ToString(canal.GetQuantidadeInscritos());
@@ -127,6 +128,7 @@ namespace Youtuber
             {
                 dgvListagem.Rows.Add(new Object[]{
                     canal.GetNomePessoa(),
+                    canal.GetSobrenome(),
                     canal.GetApelido(),
                     canal.GetNomeDoCanal(),
                     canal.GetQuantidadeInscritos(),
